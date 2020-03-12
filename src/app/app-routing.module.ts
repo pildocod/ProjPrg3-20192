@@ -12,7 +12,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path:'form',
+    path:'contact-form',
     component:ContactFormComponent
   },
   {

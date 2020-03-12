@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+html, body{
+    font-family: 'Open Sans', sans-serif;
+}
+
 .brandLogo{
     padding: 5px 5px 0px 10px;
 }
@@ -19,3 +23,4 @@
 blockquote {
     border-left: 5px solid #b86729 !important;
 }
+
