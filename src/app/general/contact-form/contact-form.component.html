@@ -1,13 +1,7 @@
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('select').formSelect();
-    });
-</script>
-
 <div class="container col">
     <div class="card-panel amber-text text-darken-2">
         <blockquote>
-            <h4 class="header2 valign-wrapper">Form with validation</h4>
+            <h4 class="header2 valign-wrapper">Contáctanos</h4>
         </blockquote>
         <div class="row">
             <form class="center-align col s12">
@@ -34,6 +28,7 @@
                         <i class="material-icons prefix">email</i>
                         <input id="email4" type="email" class="validate">
                         <label for="email4">Email</label>
+                        <span class="helper-text" data-error="Esto no es un email"></span>
                     </div>
                 </div>
                 <div class="row">
@@ -42,22 +37,24 @@
                         <input id="icon_telephone" type="tel" class="validate">
                         <label for="icon_telephone">Teléfono</label>
                     </div>
-                    <div class="input-field col s16">
-                        <select>
-                            <option value="">Opcion1</option>
+                    <div class="input-field col s6">
+                        <select id="chooseID">
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="1">Compra</option>
+                            <option value="2">Alquiler</option>
                         </select>
-                        <label>Materialize Seect</label>
+                        <label for="chooseID">Tipo de Mensaje</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">message</i>
-                        <textarea id="message4" class="materialize-textarea validate" length="120"></textarea>
+                        <textarea id="message" class="materialize-textarea validate" length="120"></textarea>
                         <label for="message">Message</label>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                            <button class="btn cyan waves-effect waves-light right disabled" type="submit"  name="action">Submit
                                 <i class="mdi-content-send right"></i>
                             </button>
                         </div>
