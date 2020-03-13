@@ -1,29 +1,25 @@
 <div class="container">
-    <a href="/client/creator" class="waves-effect waves-light btn"><i class="material-icons right">add</i>add client</a>
-    <table>
+    <a href="/client/creator" class="waves-effect waves-light light-green btn"><i class="material-icons right">add</i>add client</a>
+    <table class="highlight responsibe-table">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Item Name</th>
-                <th>Item Price</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Género</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Editar</th>
             </tr>
         </thead>
 
         <tbody>
-            <tr>
-                <td>Alvin</td>
-                <td>Eclair</td>
-                <td>$0.87</td>
-            </tr>
-            <tr>
-                <td>Alan</td>
-                <td>Jellybean</td>
-                <td>$3.76</td>
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
+            <tr *ngFor="let c of clientListData">
+                <td>{{c.name}}</td>
+                <td>{{c.age}}</td>
+                <td>{{c.gender}}</td>
+                <td>{{c.email}}</td>
+                <td>{{c.phone}}</td>
+                <td><a href="client/editor/{{c.id}}" class="btn-floating waves-effect waves-light light-blue btn-small"><i class="material-icons">edit</i></a></td>
             </tr>
         </tbody>
     </table>

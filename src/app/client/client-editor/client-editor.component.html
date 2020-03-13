@@ -1,1 +1,71 @@
-<p>client-editor works!</p>
+<div class="container">
+    <br>
+    <a href="/client" class="waves-effect waves-light btn-large amber darken-4"><i
+            class="material-icons left">arrow_back</i>Volver</a>
+    <br />
+    <br>
+    <fieldset>
+        <legend>Información a Editar</legend>
+        <div class="input-field row s12">
+            <input id="last_name" type="text" class="validate" [(ngModel)]="client.name">
+            <label for="last_name">Nombre</label>
+        </div>
+        <div class="input-field row s12">
+            <input id="email" type="email" class="validate" [(ngModel)]="client.email">
+            <label for="email">Email</label>
+            <span class="helper-text" data-error="No es un correo"></span>
+
+        </div>
+        <div class="input-field row s8">
+            <input id="phone_number" type="text" class="validate" [(ngModel)]="client.phone">
+            <label for="phone_number">Teléfono</label>
+        </div>
+        <!--<button class="btn waves-effect waves-light" (click)="updateClient()" onclick="window.location.href='/client'" type="submit" name="action">Cargar-->
+        <button class="btn waves-effect waves-light light-green darken-2" (click)="updateClient()" type="submit"
+            name="action">Cargar
+            <i class="material-icons right">edit</i>
+        </button>
+    </fieldset>
+    <fieldset>
+        <legend>Reporte</legend>
+        <table>
+            <tr>
+                <td>
+                    <strong class="gray-text">Nombre</strong>
+                </td>
+                <td>
+                    <label class="left">{{client.name}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Email</strong>
+                </td>
+                <td>
+                    <label class="left">{{client.email}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Teléfono</strong>
+                </td>
+                <td>
+                    <label class="left">{{client.phone}}</label>
+                </td>
+            </tr>
+        </table>
+        <br>
+
+    </fieldset>
+    <br>
+</div>
+
+<div id="updatedMessageModal" class="modal">
+    <div class="modal-content">
+        <h4>Message</h4>
+        <strong id="strUpdatedMessage"></strong>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+</div>

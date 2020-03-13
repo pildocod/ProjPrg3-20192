@@ -28,7 +28,8 @@
               "node_modules/materialize-css/dist/css/materialize.css"
             ],
             "scripts": [
-              "node_modules/materialize-css/dist/js/materialize.js"
+              "node_modules/materialize-css/dist/js/materialize.js",
+              "src/assets/scripts/myScript.js"
             ]
           },
           "configurations": {

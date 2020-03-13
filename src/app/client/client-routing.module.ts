@@ -10,16 +10,16 @@ const routes: Routes = [
   {
     path: 'client/list',
     component: ClientListComponent
-  },{
+  }, {
     path: 'client',
     pathMatch: 'full',
     redirectTo: 'client/list'
-  },{
-    path: 'client/editor',
-    component: ClientEditorComponent
-  },{
+  }, {
     path: 'client/creator',
     component: ClientCreatorComponent
+  }, {
+    path: 'client/editor/:clientId',
+    component: ClientEditorComponent
   }
 ];
 
