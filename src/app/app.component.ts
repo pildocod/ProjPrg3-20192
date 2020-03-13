@@ -11,7 +11,6 @@ export class AppComponent implements OnInit{
   options = {};
 
   ngOnInit(){
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, this.options);
+    M.AutoInit();
   }
 }
