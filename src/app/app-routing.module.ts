@@ -4,9 +4,8 @@ import { GeneralModule } from './general/general.module';
 import { HomeComponent } from './general/home/home.component';
 import { PageNotFoundComponent } from './general/page-not-found/page-not-found.component';
 import { ContactFormComponent } from './general/contact-form/contact-form.component';
-import { ProductRoutingModule } from './product/product-routing.module';
+//import { ProductRoutingModule } from './product/product-routing.module';
 import { ClientRoutingModule } from './client/client-routing.module';
-
 
 const routes: Routes = [
   {
@@ -32,8 +31,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     GeneralModule,
-    ProductRoutingModule,
-    ClientRoutingModule
+    //ProductRoutingModule,
+    ClientRoutingModule,
   ],
   exports: [RouterModule]
 })
