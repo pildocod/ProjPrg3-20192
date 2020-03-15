@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './general/page-not-found/page-not-found.c
 import { ContactFormComponent } from './general/contact-form/contact-form.component';
 import { ProductRoutingModule } from './product/product-routing.module';
 import { ClientRoutingModule } from './client/client-routing.module';
+import { EditorsRoutingModule } from './editors/editors-routing.module';
 
 const routes: Routes = [
   {
@@ -33,6 +34,7 @@ const routes: Routes = [
     GeneralModule,
     ProductRoutingModule,
     ClientRoutingModule,
+    EditorsRoutingModule
   ],
   exports: [RouterModule]
 })

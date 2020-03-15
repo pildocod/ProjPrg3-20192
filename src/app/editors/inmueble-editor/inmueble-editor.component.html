@@ -1,0 +1,56 @@
+<div class="container">
+    <fieldset>
+        <legend>Agregar Inmueble</legend>
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="hidden" id="hiddenID" [(ngModel)]="property._id">
+                <input id="department" type="text" class="validate" [(ngModel)]="property.department">
+                <label for="department">Department</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="city" type="text" class="validate" [(ngModel)]="property.city">
+                <label for="city">City</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="address" type="text" class="validate" [(ngModel)]="property.address">
+                <label for="address">Address</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="value" type="text" class="validate" [(ngModel)]="property.value">
+                <label for="value">Valor</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input id="type" type="text" class="validate" [(ngModel)]="property.type"
+                    placeholder="Casa/Apto/Local/etc">
+                <label for="type">Tipo</label>
+            </div>
+            <div class="input-field col s3">
+                <input id="offer" type="text" class="validate" [(ngModel)]="property.offer"
+                    placeholder="Venta/Alquiler">
+                <label for="offer">Oferta</label>
+            </div>
+            <div class="input-field col s3">
+                <input id="adviser" type="text" class="validate" [(ngModel)]="property.adviser" placeholder="ID">
+                <label for="adviser">Asesor</label>
+            </div>
+            <div class="input-field col s3">
+                <input id="adviser" type="text" class="validate" [(ngModel)]="property.adviser" placeholder="ID">
+                <label for="adviser">Status</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="photos" type="text" class="validate" [(ngModel)]="property.photos" class="disable">
+                <label for="photos">Fotos</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="video" type="text" class="validate" [(ngModel)]="property.video" class="disable">
+                <label for="video">Video</label>
+            </div>
+        </div>
+    </fieldset>
+</div>

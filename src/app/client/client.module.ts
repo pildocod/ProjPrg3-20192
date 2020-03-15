@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { ClientListComponent } from './client-list/client-list.component';
 import { ClientCreatorComponent } from './client-creator/client-creator.component';
@@ -14,10 +14,10 @@ import { from } from 'rxjs';
     CommonModule,
     FormsModule
   ],
-  exports:[
+  exports: [
     ClientCreatorComponent,
     ClientEditorComponent,
-    ClientListComponent
+    ClientListComponent,
   ]
 })
 export class ClientModule { }

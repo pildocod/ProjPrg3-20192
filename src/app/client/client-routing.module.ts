@@ -1,6 +1,6 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ClientModule } from './client.module';
+import { ClientModule } from './client.module'; //IMPORTAR PARA ngModel
 import { ClientListComponent } from './client-list/client-list.component';
 import { ClientEditorComponent } from './client-editor/client-editor.component';
 import { ClientCreatorComponent } from './client-creator/client-creator.component';
@@ -26,7 +26,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(routes),
-    ClientModule
+    //ClientModule
   ],
   exports: [RouterModule]
 })
