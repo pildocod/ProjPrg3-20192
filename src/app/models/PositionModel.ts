@@ -1,5 +1,5 @@
 export class PositionModel{
     _id:String;
-    status: String;
+    position: String;
     description: String;
 }

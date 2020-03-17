@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ClientOperationsService } from '../client-operations.service';
 
-declare const showUpdatedMessageModal: any;
+declare const showUpdatedMessageModal: any;//para script de modal
 
 @Component({
   selector: 'app-client-editor',

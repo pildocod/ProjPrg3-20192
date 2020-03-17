@@ -2,8 +2,8 @@
     <fieldset>
         <legend>Agregar Inmueble</legend>
         <div class="row">
+            <input type="" class="disable" id="hiddenID" [(ngModel)]="property._id">
             <div class="input-field col s6">
-                <input type="hidden" id="hiddenID" [(ngModel)]="property._id">
                 <input id="department" type="text" class="validate" [(ngModel)]="property.department">
                 <label for="department">Department</label>
             </div>
@@ -18,33 +18,33 @@
                 <label for="address">Address</label>
             </div>
             <div class="input-field col s6">
-                <input id="value" type="text" class="validate" [(ngModel)]="property.value">
+                <input id="value" type="number" class="validate" [(ngModel)]="property.value">
                 <label for="value">Valor</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s3">
-                <input id="type" type="text" class="validate" [(ngModel)]="property.type"
+                <input id="type" type="text" class="validate" [(ngModel)]="property.typeID"
                     placeholder="Casa/Apto/Local/etc">
                 <label for="type">Tipo</label>
             </div>
             <div class="input-field col s3">
-                <input id="offer" type="text" class="validate" [(ngModel)]="property.offer"
+                <input id="offer" type="text" class="validate" [(ngModel)]="property.offerID"
                     placeholder="Venta/Alquiler">
                 <label for="offer">Oferta</label>
             </div>
             <div class="input-field col s3">
-                <input id="adviser" type="text" class="validate" [(ngModel)]="property.adviser" placeholder="ID">
+                <input id="adviser" type="text" class="validate" [(ngModel)]="property.adviserID" placeholder="ID">
                 <label for="adviser">Asesor</label>
             </div>
             <div class="input-field col s3">
-                <input id="adviser" type="text" class="validate" [(ngModel)]="property.adviser" placeholder="ID">
-                <label for="adviser">Status</label>
+                <input id="status" type="text" class="validate" [(ngModel)]="property.statusID" placeholder="ID">
+                <label for="status">Status</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="photos" type="text" class="validate" [(ngModel)]="property.photos" class="disable">
+                <input id="photos" type="text" class="validate" [(ngModel)]="property.photo" class="disable">
                 <label for="photos">Fotos</label>
             </div>
             <div class="input-field col s6">
@@ -52,5 +52,88 @@
                 <label for="video">Video</label>
             </div>
         </div>
+        <div class="row">
+            <div class="col s6 center">
+                <button class="btn waves-effect waves-light light-blue darken-2 disable" (click)="saveOrpost()"
+                    type="submit" name="action">Guardar
+                    <i class="material-icons right">blur_on</i>
+                </button>
+            </div>
+            <div class="col s6 center">
+                <button class="btn waves-effect waves-light red" (click)="resetData()" type="submit"
+                    name="action">Cancelar
+                    <i class="material-icons right">blur_off</i>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">phone</i>
+                <input id="icon_telephone" type="tel" class="validate">
+                <label for="icon_telephone">Teléfono</label>
+            </div>
+            <div class="input-field col s6">
+                <select id="chooseID">
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="1">Compra</option>
+                    <option value="2">Alquiler</option>
+                </select>
+                <label for="chooseID">Tipo de Mensaje</label>
+            </div>
+        </div>
+
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Lista de Inmuebles</legend>
+        <table>
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>ID</th>
+                    <th>Departamento</th>
+                    <th>Ciudad</th>
+                    <th>Dirección</th>
+                    <th>Valor</th>
+                    <th>Tipo</th>
+                    <th>Oferta</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of propertyList">
+                    <td><img class="materialboxed" width="30" src="{{c.photo}}"></td>
+                    <td>
+                        <div class="idContainer">
+                            <p class="truncate">{{c._id}}</p>
+                        </div>
+                    </td>
+                    <td>{{c.department}}</td>
+                    <td>{{c.city}}</td>
+                    <td>{{c.address}}</td>
+                    <td>{{c.value}}</td>
+                    <td>
+                        <div class="idContainer">
+                            <p class="truncate">{{c.typeID}}</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="idContainer">
+                            <p class="truncate">{{c.offerID}}</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="idContainer">
+                            <p class="truncate">{{c.statusID}}</p>
+                        </div>
+                    </td>
+                    <td><a (click)="editData(c._id)"
+                            class="btn-floating waves-effect waves-light light-blue btn-small tooltipped"
+                            data-tooltip="Editar"><i class="material-icons">edit</i></a></td>
+                </tr>
+            </tbody>
+        </table>
     </fieldset>
 </div>

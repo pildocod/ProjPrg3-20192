@@ -6,7 +6,7 @@ import { EditorsModule } from './editors.module'; //SIEMPRE PARA ngModel
 
 const routes: Routes = [
   {
-    path: 'editors/inmueble',
+    path: 'property/editor',
     component: InmuebleEditorComponent
   }
 ];
@@ -14,7 +14,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(routes),
-    //ClientModule
+    EditorsModule
   ],
   exports: [RouterModule]
 })

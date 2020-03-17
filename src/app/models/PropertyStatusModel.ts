@@ -1,5 +1,6 @@
-export class PropertyStatusModel{
-    _id:String;
-    status:String;
-    description:String;
+export class PropertyStatusModel {
+    _id: String;
+    status: String;
+    description: String;
+    rentDate: Date;
 }

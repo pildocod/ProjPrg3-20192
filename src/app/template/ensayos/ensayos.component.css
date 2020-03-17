@@ -1,18 +1,16 @@
+
 .scrolling:hover{
     /* This is not completely accurate. It resizes to 2x the current width. */
     left: -100%;
     width: 200%;
 }
 
-.idContainer,td{
-    width: auto;
+.Cointainrr{
+    width: 145px;
 }
 .scrolling {
     position: relative;
     left: 0%;
     width: 100%;
     transition: left 5s, width 3s ease;
-}
-td{
-    max-width: 100px;
 }
