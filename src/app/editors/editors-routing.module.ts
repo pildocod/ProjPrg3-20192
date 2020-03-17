@@ -2,7 +2,7 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { InmuebleEditorComponent } from './inmueble-editor/inmueble-editor.component';
-import { EditorsModule } from './editors.module'; //SIEMPRE PARA ngModel
+//import { EditorsModule } from './editors.module'; //SIEMPRE PARA ngModel
 
 const routes: Routes = [
   {
@@ -14,7 +14,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(routes),
-    EditorsModule
+    //EditorsModule
   ],
   exports: [RouterModule]
 })

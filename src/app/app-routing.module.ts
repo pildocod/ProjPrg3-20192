@@ -7,6 +7,7 @@ import { ContactFormComponent } from './general/contact-form/contact-form.compon
 import { ProductRoutingModule } from './product/product-routing.module';
 import { ClientRoutingModule } from './client/client-routing.module';
 import { EditorsRoutingModule } from './editors/editors-routing.module';
+import { SecurityRoutingModule } from './security/security-routing.module';
 
 const routes: Routes = [
   {
@@ -34,7 +35,8 @@ const routes: Routes = [
     GeneralModule,
     ProductRoutingModule,
     ClientRoutingModule,
-    EditorsRoutingModule
+    EditorsRoutingModule,
+    SecurityRoutingModule
   ],
   exports: [RouterModule]
 })

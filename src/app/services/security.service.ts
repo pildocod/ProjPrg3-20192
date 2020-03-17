@@ -12,4 +12,5 @@ export class SecurityService {
   isUserLogged(){
     return this.userLogged;
   }
+  
 }
