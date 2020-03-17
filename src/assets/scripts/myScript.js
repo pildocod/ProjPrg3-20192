@@ -11,7 +11,7 @@ function showUpdatedMessageModal(message) {
 }
 
 function initComps() {
-    alert("Elementos Cargados");
+    //alert("Elementos Cargados");
 
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.materialboxed');

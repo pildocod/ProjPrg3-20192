@@ -2,53 +2,66 @@
     <fieldset>
         <legend>Agregar Inmueble</legend>
         <div class="row">
-            <input type="" class="disable" id="hiddenID" [(ngModel)]="property._id">
-            <div class="input-field col s6">
-                <input id="department" type="text" class="validate" [(ngModel)]="property.department">
-                <label for="department">Department</label>
+            <div class="col s12">
+                <input type="" class="disable" id="hiddenID">
             </div>
             <div class="input-field col s6">
-                <input id="city" type="text" class="validate" [(ngModel)]="property.city">
-                <label for="city">City</label>
+                <input id="department" type="text" class="validate" >
+                <label for="department">Department *</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="city" type="text" class="validate" >
+                <label for="city">City *</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="address" type="text" class="validate" [(ngModel)]="property.address">
-                <label for="address">Address</label>
+                <input id="address" type="text" class="validate">
+                <label for="address">Address *</label>
             </div>
             <div class="input-field col s6">
-                <input id="value" type="number" class="validate" [(ngModel)]="property.value">
-                <label for="value">Valor</label>
+                <input id="value" type="number" class="validate">
+                <label for="value">Valor *</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s3">
-                <input id="type" type="text" class="validate" [(ngModel)]="property.typeID"
-                    placeholder="Casa/Apto/Local/etc">
-                <label for="type">Tipo</label>
+                <select id="chooseID">
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="1">Casa</option>
+                    <option value="2">Apartamento</option>
+                    <option value="3">Local</option>
+                </select>
+                <label for="chooseID">Tipo de Propiedad</label>
             </div>
             <div class="input-field col s3">
-                <input id="offer" type="text" class="validate" [(ngModel)]="property.offerID"
-                    placeholder="Venta/Alquiler">
-                <label for="offer">Oferta</label>
+                <select id="chooseID">
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="1">Venta</option>
+                    <option value="2">Alquiler</option>
+                </select>
+                <label for="chooseID">Oferta</label>
             </div>
             <div class="input-field col s3">
-                <input id="adviser" type="text" class="validate" [(ngModel)]="property.adviserID" placeholder="ID">
+                <input id="adviser" type="text" class="validate" placeholder="ID">
                 <label for="adviser">Asesor</label>
             </div>
             <div class="input-field col s3">
-                <input id="status" type="text" class="validate" [(ngModel)]="property.statusID" placeholder="ID">
-                <label for="status">Status</label>
+                <select id="chooseID">
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="1">Compra</option>
+                    <option value="2">Alquiler</option>
+                </select>
+                <label for="chooseID">Status</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="photos" type="text" class="validate" [(ngModel)]="property.photo" class="disable">
-                <label for="photos">Fotos</label>
+                <input id="photos" type="text" class="validate" class="disable">
+                <label for="photos">Foto*</label>
             </div>
             <div class="input-field col s6">
-                <input id="video" type="text" class="validate" [(ngModel)]="property.video" class="disable">
+                <input id="video" type="text" class="validate" class="disable">
                 <label for="video">Video</label>
             </div>
         </div>

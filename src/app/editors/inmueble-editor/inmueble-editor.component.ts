@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PropertyModel } from 'src/app/models/PropertyModel';
 import { PropertyOperatorService } from 'src/app/services/property-operator.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 declare var M: any; //para materialize js SIEMPRE
 declare let initComps: any;
@@ -28,7 +29,20 @@ export class InmuebleEditorComponent implements OnInit {
     statusID: null
   }
 
-  constructor(private servicess: PropertyOperatorService) { }
+  fgValidation: FormGroup;
+
+  constructor(private servicess: PropertyOperatorService,
+  private fb: FormBuilder) {}
+  
+    fgValidationBuildar(){
+      this.fgValidation = this.fb.group({
+        depto:[],
+        city:[],
+        address:[],
+        value:[],
+        photo:[]        
+      })
+    }
 
   ngOnInit(): void {
     this.loadDataProperty();
