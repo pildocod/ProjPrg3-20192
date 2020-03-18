@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PropertyModel } from 'src/app/models/PropertyModel';
 import { PropertyOperatorService } from 'src/app/services/property-operator.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { EditorsModule } from './../editors.module';
 
 declare var M: any; //para materialize js SIEMPRE
 declare let initComps: any;

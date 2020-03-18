@@ -1,12 +1,23 @@
 <div class="navbar-fixed">
   <nav>
+    <strong *ngIf="userLogged">{{userName}}</strong>
     <div class="nav-wrapper amber darken-3">
-      <a href="#" class="brand-logo"><img class="brandLogo" src="assets/img/icono.png" width=45>Hogar Colombia</a>
+      <a href="#" class="brand-logo"><img class="brandLogo" src="assets/img/icono.png" width=45>Hogar Col</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+        <li *ngIf="!userLogged"><a href="/login">Login</a></li>
+        <li *ngIf="userLogged"><a href="#">Logout</a></li>
       </ul>
     </div>
   </nav>
 </div>
+
+<ul class="sidenav" id="mobile-hotel">
+  <li><a >Login</a></li>
+  <li><a ></a>Logout</li>
+</ul>
+
+<script> 
+  $(document).ready(function(){
+    $('.button-collapse').sideNav();
+  });
+</script>

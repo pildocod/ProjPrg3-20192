@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HogarSecurityService } from 'src/app/services/security.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private secService: HogarSecurityService) { }
+
+  userLogged: boolean;
+  userName: String;
 
   ngOnInit(): void {
+    this.verifyUserSession();
+  }
+
+  verifyUserSession(){
+    this.userLogged = this.secService.isUserLogged().logged;
+    this.userName = this.secService.isUserLogged().name;
   }
 
 }

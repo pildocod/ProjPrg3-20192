@@ -37,8 +37,8 @@
             <div class="input-field col s3">
                 <select id="chooseID">
                     <option value="" disabled selected>Selecciona una opción</option>
-                    <option value="1">Venta</option>
-                    <option value="2">Alquiler</option>
+                    <option value="0">Venta</option>
+                    <option value="1">Alquiler</option>
                 </select>
                 <label for="chooseID">Oferta</label>
             </div>
@@ -49,8 +49,9 @@
             <div class="input-field col s3">
                 <select id="chooseID">
                     <option value="" disabled selected>Selecciona una opción</option>
-                    <option value="1">Compra</option>
-                    <option value="2">Alquiler</option>
+                    <option value="0">Disponible</option>
+                    <option value="1">Vendido</option>
+                    <option value="2">Alquilado</option>
                 </select>
                 <label for="chooseID">Status</label>
             </div>
@@ -134,7 +135,7 @@
                     </td>
                     <td>
                         <div class="idContainer">
-                            <p class="truncate">{{c.offerID}}</p>
+                            <p class="truncate">{{c.offer}}</p>
                         </div>
                     </td>
                     <td>
