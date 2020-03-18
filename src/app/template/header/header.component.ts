@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HogarSecurityService } from 'src/app/services/security.service';
+import { UserModel } from 'src/app/models/UserModel';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -7,19 +9,29 @@ import { HogarSecurityService } from 'src/app/services/security.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  userInfo: UserModel;
+  userLogged: Boolean = false;
+  userName: String;
+
+  subscription: Subscription;
 
   constructor(private secService: HogarSecurityService) { }
-
-  userLogged: boolean;
-  userName: String;
 
   ngOnInit(): void {
     this.verifyUserSession();
   }
 
-  verifyUserSession(){
-    this.userLogged = this.secService.isUserLogged().logged;
-    this.userName = this.secService.isUserLogged().name;
+  verifyUserSession() {
+    this.subscription = this.secService.getUserInfo().subscribe(user => {
+      this.userInfo = user;
+      this.updateInfo();
+    });
+  }
+
+  updateInfo() {
+    let msg = "In session: ";
+    this.userLogged = this.userInfo.isLogged;
+    this.userName = this.userInfo.name;
   }
 
 }

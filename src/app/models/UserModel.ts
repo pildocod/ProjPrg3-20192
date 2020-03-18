@@ -9,4 +9,5 @@ export class UserModel {
     balance: Number;
     codeudorID: Number;
     propertysID: Number;
+    isLogged:Boolean = false;
 }

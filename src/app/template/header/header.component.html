@@ -1,23 +1,19 @@
 <div class="navbar-fixed">
   <nav>
-    <strong *ngIf="userLogged">{{userName}}</strong>
+    <strong *ngIf="userLogged">Hola {{userName}}</strong>
     <div class="nav-wrapper amber darken-3">
       <a href="#" class="brand-logo"><img class="brandLogo" src="assets/img/icono.png" width=45>Hogar Col</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li *ngIf="!userLogged"><a href="/login">Login</a></li>
-        <li *ngIf="userLogged"><a href="#">Logout</a></li>
+      <a href="#" data-target="mobile-hotel" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li *ngIf="!userLogged"><a routerLink="/security/login">Login</a></li>
+        <li *ngIf="userLogged"><a routerLink="/security/logout">Logout</a></li>
+        <li *ngIf="userLogged"><a routerLink="/property/editor">property</a></li>
       </ul>
     </div>
   </nav>
 </div>
 
 <ul class="sidenav" id="mobile-hotel">
-  <li><a >Login</a></li>
-  <li><a ></a>Logout</li>
+  <li><a *ngIf="!userLogged" routerLink="/security/login">Login</a></li>
+  <li><a *ngIf="userLogged" routerLink="/security/logout">Logout</a></li>
 </ul>
-
-<script> 
-  $(document).ready(function(){
-    $('.button-collapse').sideNav();
-  });
-</script>

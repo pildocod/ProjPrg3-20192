@@ -4,6 +4,8 @@ import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SecurityModule } from './../security.module';
 import { HttpClientModule } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
+import { UserModel } from 'src/app/models/UserModel';
 
 @Component({
   selector: 'app-login',
@@ -31,13 +33,28 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  private saveSessionInfo(){
+    
+  }
+  //let tb_users = JSON.parse(localStorage.getItem("variablename")) //de cadena a JSON
+  //localStorage.setItem('testObject', JSON.stringify(testObject)); //de Json a cadena
+
   loginEvent() {
     if (this.fgValidation.invalid) {
       alert("Invalid data");
     } else {
       let u = this.fg.username.value;
       let ps = this.fg.password.value;
-      this.secService.loginUser(u, ps);
+      this.secService.loginUser(u, ps).subscribe(propList => {
+        if(propList != null){
+          console.log(propList);
+          this.router.navigate(['/home']);
+          //alert("User found")
+        }else{
+          alert("User not found")
+        }
+      });
+      
     }
   }
 
