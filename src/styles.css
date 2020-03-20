@@ -24,3 +24,6 @@ blockquote {
     border-left: 5px solid #b86729 !important;
 }
 
+.warning-validation{
+    color: red;
+}

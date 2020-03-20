@@ -1,8 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, {});
-});
-
 function showUpdatedMessageModal(message) {
     let elem = document.querySelector("#updatedMessageModal");
     let instance = M.Modal.getInstance(elem);
@@ -14,23 +9,22 @@ function initComps() {
     //alert("Elementos Cargados");
 
     document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('.materialboxed');
-        let instances = M.Materialbox.init(elems, {});
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('.tooltipped');
-        var instances = M.Tooltip.init(elems, options);
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('select');
-        var instances = M.FormSelect.init(elems, options);
-    });
-    document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.modal');
         var instances = M.Modal.init(elems, {});
+
+        elems = document.querySelectorAll('.materialboxed');
+        M.Materialbox.init(elems, {});
+        
+        elems = document.querySelectorAll('.tooltipped');
+        M.Tooltip.init(elems, {});
+
+        elems = document.querySelectorAll('select');
+        M.FormSelect.init(elems, {});
+
+        elems = document.querySelectorAll('.modal');
+        M.Modal.init(elems, {});
+
+        var elems = document.querySelectorAll('.sidenav');
+        M.Sidenav.init(elems, {});
     });
-
-
 }

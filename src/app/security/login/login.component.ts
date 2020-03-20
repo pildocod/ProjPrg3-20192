@@ -28,14 +28,11 @@ export class LoginComponent implements OnInit {
 
   fgValidationBuilder() {
     this.fgValidation = this.fb.group({
-      username: ['', [Validators.required, Validators.minLength(7), Validators.email]],
+      username: ['', [Validators.required, Validators.minLength(7), Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
       password: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(15)]]
     })
   }
 
-  private saveSessionInfo(){
-    
-  }
   //let tb_users = JSON.parse(localStorage.getItem("variablename")) //de cadena a JSON
   //localStorage.setItem('testObject', JSON.stringify(testObject)); //de Json a cadena
 
@@ -54,7 +51,6 @@ export class LoginComponent implements OnInit {
           alert("User not found")
         }
       });
-      
     }
   }
 

@@ -1,4 +1,4 @@
-<div class="row">
+<!--<div class="row">
     <div class="col s2">
         <div class="card medium">
             <div class="card-content">
@@ -98,4 +98,16 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
+
+
+<article>
+    <select (change)="selectChangeHandler($event)">
+        <option value="0">Monday</option>
+        <option value="1">Tuesday</option>
+        <option value="2">Wednesday</option>
+        <option value="3">Thursday</option>
+        <option value="4">Friday</option>
+    </select>
+    <p><span>You selected:</span><b>{{selectedDay}}</b></p>
+</article>

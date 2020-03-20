@@ -1,19 +1,24 @@
-<div class="navbar-fixed">
-  <nav>
-    <strong *ngIf="userLogged">Hola {{userName}}</strong>
-    <div class="nav-wrapper amber darken-3">
-      <a href="#" class="brand-logo"><img class="brandLogo" src="assets/img/icono.png" width=45>Hogar Col</a>
-      <a href="#" data-target="mobile-hotel" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li *ngIf="!userLogged"><a routerLink="/security/login">Login</a></li>
-        <li *ngIf="userLogged"><a routerLink="/security/logout">Logout</a></li>
-        <li *ngIf="userLogged"><a routerLink="/property/editor">property</a></li>
-      </ul>
-    </div>
-  </nav>
-</div>
+<ul id="dropdown1" class="dropdown-content">
+  <li><a routerLink="/property/editor">Property</a></li>
+  <li class="divider"></li>
+  <li><a id="logout" routerLink="/security/logout">Logout</a></li>
+</ul>
+<nav>
+  <!--<strong *ngIf="userLogged">Hola {{userName}}</strong>-->
+  <div class="nav-wrapper amber darken-3">
+    <a href="#" class="brand-logo"><img class="brandLogo" src="assets/img/icono.png" width=45>Hogar Col</a>
+    <a href="#" data-target="mobile-hotel" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li *ngIf="!userLogged"><a routerLink="/security/login">Login</a></li>
+      <!--<li *ngIf="userLogged"><a routerLink="/property/editor">Property</a></li>
+      <li *ngIf="userLogged"><a routerLink="/security/logout">Logout</a></li>-->
+      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">{{userName}}<i *ngIf="userLogged" class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+  </div>
+</nav>
 
 <ul class="sidenav" id="mobile-hotel">
   <li><a *ngIf="!userLogged" routerLink="/security/login">Login</a></li>
-  <li><a *ngIf="userLogged" routerLink="/security/logout">Logout</a></li>
+  <li><a *ngIf="userLogged" routerLink="/property/editor">Property</a></li>
+  <li><a id="logout" *ngIf="userLogged" routerLink="/security/logout">Logout</a></li>
 </ul>

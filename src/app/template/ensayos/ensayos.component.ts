@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnsayosComponent implements OnInit {
 
+  selectedDay: String = '';
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  selectChangeHandler(event:any){
+    this.selectedDay = event.target.value;
+  }
 }

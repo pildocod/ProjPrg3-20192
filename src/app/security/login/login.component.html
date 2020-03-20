@@ -9,14 +9,15 @@
                     <i class="material-icons prefix">mail_outline</i>
                     <input class="validate" formControlName="username" id="username" type="email">
                     <label for="username" data-error="wrong" data-success="right">Username</label>
-                    <div class="warning-validation" *ngIf="fg.username.errors && (fg.username.dirty || fg.username.touched)">
+                    <div class="warning-validation"
+                        *ngIf="fg.username.errors && (fg.username.dirty || fg.username.touched)">
                         <strong *ngIf="fg.username.errors.required">
                             Username required!<br>
                         </strong>
-                        <strong *ngIf="fg.username.errors.minLength">
+                        <strong *ngIf="fg.username.errors.minlength">
                             Username must be at least 7 characters!<br>
                         </strong>
-                        <strong *ngIf="fg.username.errors.email">
+                        <strong *ngIf="fg.username.errors.pattern">
                             Username must be an email!<br>
                         </strong>
                     </div>
@@ -27,14 +28,15 @@
                     <i class="material-icons prefix">lock_outline</i>
                     <input id="password" formControlName="password" type="password">
                     <label for="password">Password</label>
-                    <div class="warning-validation" *ngIf="fg.password.errors && (fg.password.dirty || fg.password.touched)">
+                    <div class="warning-validation"
+                        *ngIf="fg.password.errors && (fg.password.dirty || fg.password.touched)">
                         <strong *ngIf="fg.password.errors.required">
                             Password required!<br>
                         </strong>
-                        <strong *ngIf="fg.password.errors.minLength">
+                        <strong *ngIf="fg.password.errors.minlength">
                             Password must be at least 7 characters!<br>
                         </strong>
-                        <strong *ngIf="fg.password.errors.maxLength">
+                        <strong *ngIf="fg.password.errors.maxlength">
                             Password must be at least 15 characters!<br>
                         </strong>
                         <strong *ngIf="fg.password.errors.pattern">
@@ -46,7 +48,8 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <button [disabled]="fg.username.errors || fg.password.errors" class="btn col s12" type="submit" name="action">Login</button>
+                    <button [disabled]="fg.username.errors || fg.password.errors" class="btn col s12" type="submit"
+                        name="action">Login</button>
                 </div>
             </div>
             <div class="row">
@@ -57,7 +60,6 @@
                     <p class="margin right-align medium-small"><a href="#">Forgot password?</a></p>
                 </div>
             </div>
-
         </form>
     </div>
 </div>

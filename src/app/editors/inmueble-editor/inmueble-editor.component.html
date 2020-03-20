@@ -1,104 +1,199 @@
-<div class="container">
+<div class="container" *ngIf="userLogged">
     <fieldset>
         <legend>Agregar Inmueble</legend>
-        <div class="row">
-            <div class="col s12">
-                <input type="" class="disable" id="hiddenID">
-            </div>
-            <div class="input-field col s6">
-                <input id="department" type="text" class="validate" >
-                <label for="department">Department *</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="city" type="text" class="validate" >
-                <label for="city">City *</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s6">
-                <input id="address" type="text" class="validate">
-                <label for="address">Address *</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="value" type="number" class="validate">
-                <label for="value">Valor *</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s3">
-                <select id="chooseID">
-                    <option value="" disabled selected>Selecciona una opción</option>
-                    <option value="1">Casa</option>
-                    <option value="2">Apartamento</option>
-                    <option value="3">Local</option>
-                </select>
-                <label for="chooseID">Tipo de Propiedad</label>
-            </div>
-            <div class="input-field col s3">
-                <select id="chooseID">
-                    <option value="" disabled selected>Selecciona una opción</option>
-                    <option value="0">Venta</option>
-                    <option value="1">Alquiler</option>
-                </select>
-                <label for="chooseID">Oferta</label>
-            </div>
-            <div class="input-field col s3">
-                <input id="adviser" type="text" class="validate" placeholder="ID">
-                <label for="adviser">Asesor</label>
-            </div>
-            <div class="input-field col s3">
-                <select id="chooseID">
-                    <option value="" disabled selected>Selecciona una opción</option>
-                    <option value="0">Disponible</option>
-                    <option value="1">Vendido</option>
-                    <option value="2">Alquilado</option>
-                </select>
-                <label for="chooseID">Status</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s6">
-                <input id="photos" type="text" class="validate" class="disable">
-                <label for="photos">Foto*</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="video" type="text" class="validate" class="disable">
-                <label for="video">Video</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s6 center">
-                <button class="btn waves-effect waves-light light-blue darken-2 disable" (click)="saveOrpost()"
-                    type="submit" name="action">Guardar
-                    <i class="material-icons right">blur_on</i>
-                </button>
-            </div>
-            <div class="col s6 center">
-                <button class="btn waves-effect waves-light red" (click)="resetData()" type="submit"
-                    name="action">Cancelar
-                    <i class="material-icons right">blur_off</i>
-                </button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s6">
-                <i class="material-icons prefix">phone</i>
-                <input id="icon_telephone" type="tel" class="validate">
-                <label for="icon_telephone">Teléfono</label>
-            </div>
-            <div class="input-field col s6">
-                <select id="chooseID">
-                    <option value="" disabled selected>Selecciona una opción</option>
-                    <option value="1">Compra</option>
-                    <option value="2">Alquiler</option>
-                </select>
-                <label for="chooseID">Tipo de Mensaje</label>
-            </div>
-        </div>
+        <form [formGroup]="fgValidation" class="login-form">
+            <div class="row">
+                <div class="col s12">
+                    <input type="hidden" class="disable" id="hiddenID" formControlName="_id" >
+                </div>
+                <!--(ngSubmit)="chooseSelected()"
 
-
+                <div class="input-field col s12">
+                    <input class="validate" formControlName="username" id="username" type="email">
+                    <label for="username" data-error="wrong" data-success="right">Username</label>
+                    <div class="warning-validation"
+                        *ngIf="fg.username.errors && (fg.username.dirty || fg.username.touched)">
+                        <strong *ngIf="fg.username.errors.required">
+                            Username required!<br>
+                        </strong>
+                        <strong *ngIf="fg.username.errors.minLength">
+                            Username must be at least 7 characters!<br>
+                        </strong>
+                        <strong *ngIf="fg.username.errors.email">
+                            Username must be an email!<br>
+                        </strong>
+                    </div>
+                </div>-->
+                <div class="input-field col s6">
+                    <input id="departmentd" type="text" class="validate" formControlName="department">
+                    <label for="departmentd">Department *</label>
+                    <div class="warning-validation"
+                        *ngIf="fg.department.errors && (fg.department.dirty || fg.department.touched)">
+                        <strong *ngIf="fg.department.errors.required">
+                            Department required!<br>
+                        </strong>
+                        <strong *ngIf="fg.department.errors.minlength">
+                            Department must be at least 3 characters!<br>
+                        </strong>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <input id="city" type="text" class="validate" formControlName="city">
+                    <label for="city">Ciudad *</label>
+                    <div class="warning-validation" *ngIf="fg.city.errors && (fg.city.dirty || fg.city.touched)">
+                        <strong *ngIf="fg.city.errors.required">
+                            Ciudad requerido!<br>
+                        </strong>
+                        <strong *ngIf="fg.city.errors.minlength">
+                            Ciudad debe tener mínimo 3 letras!<br>
+                        </strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="address" type="text" class="validate" formControlName="address">
+                    <label for="address">Dirección *</label>
+                    <div class="warning-validation"
+                        *ngIf="fg.address.errors && (fg.address.dirty || fg.address.touched)">
+                        <strong *ngIf="fg.address.errors.required">
+                            Dirección requerido!<br>
+                        </strong>
+                        <strong *ngIf="fg.address.errors.minlength">
+                            Dirección debe tener mínimo 7 letras!<br>
+                        </strong>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <input id="value" type="number" class="validate" formControlName="value">
+                    <label for="value">Valor *</label>
+                    <div class="warning-validation" *ngIf="fg.value.errors && (fg.value.dirty || fg.value.touched)">
+                        <strong *ngIf="fg.value.errors.required">
+                            Value requerido!<br>
+                        </strong>
+                        <strong *ngIf="fg.value.errors.minlength">
+                            Valor debe tener mínimo 4 letras!<br>
+                        </strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s3">
+                    <select id="chooseID" (change)="chooseSelected($event)" required formControlName="typeID">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <!-- <option *ngFor="let city of City" [ngValue]="city">{{city}}</option> -->
+                        <option value="5e71aad8b591d3176833ad39">Casa</option>
+                        <option value="5e71aafbb591d3176833ad3a">Apartamento</option>
+                        <option value="5e71ab0cb591d3176833ad3b">Local</option>
+                    </select>
+                    <label for="chooseID">Tipo de Propiedad *</label>
+                    <div class="warning-validation" *ngIf="fg.typeID.errors && (fg.typeID.dirty || fg.typeID.touched)">
+                        <strong *ngIf="fg.typeID.errors.required">
+                            Tipo requerido!<br>
+                        </strong>
+                    </div>
+                </div>
+                <div class="input-field col s3">
+                    <select id="OfferID" (change)="offerSelected($event)" required formControlName="offerID">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="0">Venta</option>
+                        <option value="1">Alquiler</option>
+                    </select>
+                    <label for="OfferID">Oferta *</label>
+                    <div class="warning-validation"
+                        *ngIf="fg.offerID.errors && (fg.offerID.dirty || fg.offerID.touched)">
+                        <strong *ngIf="fg.offerID.errors.required">
+                            Oferta requerida!<br>
+                        </strong>
+                    </div>
+                </div>
+                <div class="input-field col s3">
+                    <input id="adviser" type="text" class="validate" placeholder="ID" formControlName="adviserID">
+                    <label for="adviser">Asesor</label>
+                    <div class="warning-validation"
+                        *ngIf="fg.adviserID.errors && (fg.adviserID.dirty || fg.adviserID.touched)">
+                        <strong *ngIf="fg.adviserID.errors.required">
+                            Asesor required!<br>
+                        </strong>
+                    </div>
+                </div>
+                <div class="input-field col s3">
+                    <select id="StatusID" (change)="statusSelected($event)" required formControlName="statusID">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="0">Disponible</option>
+                        <option value="1">Vendido</option>
+                        <option value="2">Alquilado</option>
+                    </select>
+                    <label for="StatusID">Status *</label>
+                    <div class="warning-validation"
+                        *ngIf="fg.statusID.errors && (fg.statusID.dirty || fg.statusID.touched)">
+                        <strong *ngIf="fg.statusID.errors.required">
+                            Status requerido!<br>
+                        </strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6" formvali>
+                    <input id="photos" type="text" class="validate" class="disable" formControlName="photo">
+                    <label for="photos">Foto*</label>
+                    <div class="warning-validation" *ngIf="fg.photo.errors && (fg.photo.dirty || fg.photo.touched)">
+                        <strong *ngIf="fg.photo.errors.required">
+                            Foto requerido!<br>
+                        </strong>
+                        <strong *ngIf="fg.photo.errors.minlength">
+                            Foto debe tener mínimo 4 letras!<br>
+                        </strong>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <input id="video" type="text" class="validate" class="disable" formControlName="video">
+                    <label for="video">Video</label>
+                    <div class="warning-validation" *ngIf="fg.video.errors && (fg.video.dirty || fg.video.touched)">
+                        <strong *ngIf="fg.video.errors.required">
+                            Video required!<br>
+                        </strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6 center">
+                    <button class="btn light-blue darken-2" (click)="saveOrpost()"
+                        [disabled]="fg.department.errors || fg.city.errors || fg.address.errors || fg.value.errors || fg.typeID.errors || fg.offerID.errors || fg.photo.errors || fg.statusID.errors"
+                        type="submit" name="action">Guardar
+                        <i class="material-icons right">blur_on</i>
+                    </button>
+                </div>
+                <div class="col s6 center">
+                    <button class="btn red" (click)="resetData()" type="submit" name="action">Cancelar
+                        <i class="material-icons right">blur_off</i>
+                    </button>
+                </div>
+            </div>
+        </form>
     </fieldset>
 
+    <!--
+        <fieldset>
+        <legend>Objetos</legend>
+        <table>
+            <tr>
+                <th>{{property._id}}</th>
+                <th>{{property.department}}</th>
+                <th>{{property.city}}</th>
+                <th>{{property.address}}</th>
+                <th>{{property.value}}</th>
+                <th>{{property.typeID}}</th>
+                <th>{{property.offerID}}</th>
+                <th>{{property.adviserID}}</th>
+                <th>{{property.photo}}</th>
+                <th>{{property.video}}</th>
+                <th>{{property.statusID}}</th>
+            </tr>
+        </table>
+    </fieldset>
+    -->
+    
     <fieldset>
         <legend>Lista de Inmuebles</legend>
         <table>
@@ -135,7 +230,7 @@
                     </td>
                     <td>
                         <div class="idContainer">
-                            <p class="truncate">{{c.offer}}</p>
+                            <p class="truncate">{{c.offerID}}</p>
                         </div>
                     </td>
                     <td>
@@ -143,11 +238,19 @@
                             <p class="truncate">{{c.statusID}}</p>
                         </div>
                     </td>
-                    <td><a (click)="editData(c._id)"
-                            class="btn-floating waves-effect waves-light light-blue btn-small tooltipped"
-                            data-tooltip="Editar"><i class="material-icons">edit</i></a></td>
+                    <td>
+                        <a (click)="editData(c._id)" class="btn-floating light-blue btn-small tooltipped"
+                            data-tooltip="Editar"><i class="material-icons">edit</i></a>
+                        <a class="btn-floating light-blue btn-small red tooltipped disabled"
+                            data-tooltip="Editar"><i class="material-icons">delete</i></a>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </fieldset>
+</div>
+<div class="container"*ngIf="!userLogged">
+    <h3>INGRESA PARA TENER ACCESO</h3>
+    <a href="/security/login" class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>Login</a>
+    <br>
 </div>
